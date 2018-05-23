@@ -116,7 +116,6 @@ void connecthost()
   int counter,t1,t2;
   Serial.print("connecting to ");
   Serial.println(host);
-  
   WiFiClient client; //Client to handle TCP Connection
   const int httpPort = 80;
   if (!client.connect(host, httpPort)) 
@@ -126,7 +125,7 @@ void connecthost()
     //digitalWrite(D7,HIGH);
   }
 
-    url = "http://jayantbenjamin.000webhostapp.com/SIEShack/gethardwarerequest.php?p="+irs+"&t1="+temps1+"&t2="+temps2+"&f="+fires;
+    url = "http://jayantbenjamin.000webhostapp.com/SIEShack/hardware.php?p="+irs+"&t1="+temps1+"&t2="+temps2+"&f="+fires;
 
      Serial.println(url);
   client.print(String("GET ") + url + " HTTP/1.1\r\n" +
